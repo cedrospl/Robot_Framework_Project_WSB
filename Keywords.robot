@@ -40,6 +40,7 @@ Logging out of poczta.o2.pl e-mail
    Wait Until Element Is Visible   ${options-btn}   timeout=60   error=OptionsButtonNotFound!
    Click Button   ${options-btn}
    Wait Until Element Is Visible   ${logout-btn}   timeout=60   error=LogountButtonNotFound!
+   Sleep   1s
    Click Button   ${logout-btn}
    Wait Until Element Is Visible   ${loginAgain-btn}   timeout=60   error=LoginAgainButtonNotFound!
 
