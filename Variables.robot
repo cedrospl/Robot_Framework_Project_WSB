@@ -4,6 +4,11 @@ ${Firefox-Headless}=   HeadlessFirefox
 ${Chrome}=   Chrome
 ${Chrome-Healdess}=   HeadlessChrome
 ${o2-url}=   https://poczta.o2.pl/
+${login}=   testertestowy@o2.pl
+${password}=   testowe!0!
+${EmailTo-text}=   testertestowy@o2.pl
+${EmailTopic-text}=   Test mail
+${EmailContent-text}=   Test content
 
 ${login-field}=   id:login
 ${pass-field}=   css:input[name="password"]

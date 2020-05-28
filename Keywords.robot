@@ -31,8 +31,8 @@ Set Browser Window to 1900x1080
 
 Logging to poczta.o2.pl e-mail
    Wait Until Element Is Visible   ${login-field}   timeout=60   error=MailButtonNotFound!
-   Input Text   ${login-field}   testertestowy@o2.pl   clear=True
-   Input Text   ${pass-field}   testowe!0!   clear=True
+   Input Text   ${login-field}   ${login}   clear=True
+   Input Text   ${pass-field}   ${password}   clear=True
    Click Button   ${login-btn}
    Wait Until Element Is Visible   ${writeEmail-btn}   timeout=60   error=WriteMailButtonNotFound!
 
@@ -47,9 +47,9 @@ Logging out of poczta.o2.pl e-mail
 Writing an e-mail message to yourself
     Click Button   ${writeEmail-btn}
     Wait Until Element Is Visible   ${emailTo-field}   timeout=60   error=EmailToFieldNotFound!
-    Input Text   ${emailTo-field}   testertestowy@o2.pl   clear=True
-    Input Text   ${emailTopic-field}   Test mail   clear=True
-    Input Text   ${emailContent-field}   Test content   clear=True
+    Input Text   ${emailTo-field}   ${EmailTo-text}   clear=True
+    Input Text   ${emailTopic-field}   ${EmailTopic-text}   clear=True
+    Input Text   ${emailContent-field}   ${EmailContent-text}   clear=True
     Wait Until Element Is Visible   ${emailSend-btn}   timeout=60   error=EmailSendButtonNotFound!
     Sleep   1s
     Click Button   ${emailSend-btn}
