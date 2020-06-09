@@ -39,6 +39,22 @@ Logging to poczta.o2.pl e-mail
    ${isConfirmNeeded}=   Run Keyword And Return Status   Element Should Be Visible   ${emailConfirmDelete}
    Run Keyword If   ${isConfirmNeeded}>0   Confirm deleting of spam
 
+Logging to poczta.o2.pl e-mail with invalid login
+   Wait Until Element Is Visible   ${login-field}   timeout=60   error=MailButtonNotFound!
+   Input Text   ${login-field}   ${loginInvalid}   clear=True
+   Input Text   ${pass-field}   ${password}   clear=True
+   Click Button   ${login-btn}
+   Wait Until Element Is Visible   ${login-error-message}   timeout=60   error=WriteMailButtonNotFound!
+   Page Should Contain   Podany login i/lub hasło są nieprawidłowe.
+
+Logging to poczta.o2.pl e-mail with invalid password
+   Wait Until Element Is Visible   ${login-field}   timeout=60   error=MailButtonNotFound!
+   Input Text   ${login-field}   ${login}   clear=True
+   Input Text   ${pass-field}   ${passwordInvalid}   clear=True
+   Click Button   ${login-btn}
+   Wait Until Element Is Visible   ${login-error-message}   timeout=60   error=WriteMailButtonNotFound!
+   Page Should Contain   Spróbuj jeszcze raz.
+
 Deleting spam
    Wait Until Element Is Visible   ${emailSelectAll}   timeout=60   error=SelectAllButtonNotFound!
    Click Element   ${emailSelectAll}

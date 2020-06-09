@@ -7,6 +7,16 @@ Opening Chrome Browser with site poczta.o2.pl
    Open Chrome Browser with poczta.o2.pl
    Close Browser
 
+Logging in to poczta.o2.pl e-mail with invalid login
+   Open Chrome Browser with poczta.o2.pl
+   Logging to poczta.o2.pl e-mail with invalid login
+   Close Browser
+
+Logging in to poczta.o2.pl e-mail with invalid password
+   Open Chrome Browser with poczta.o2.pl
+   Logging to poczta.o2.pl e-mail with invalid password
+   Close Browser
+
 Logging in to poczta.o2.pl e-mail and logging out
    Open Chrome Browser with poczta.o2.pl
    Logging to poczta.o2.pl e-mail
