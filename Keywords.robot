@@ -1,5 +1,4 @@
 *** Settings ***
-Library   SeleniumLibrary
 Resource   Variables.robot
 
 *** Keywords ***
@@ -35,6 +34,20 @@ Logging to poczta.o2.pl e-mail
    Input Text   ${pass-field}   ${password}   clear=True
    Click Button   ${login-btn}
    Wait Until Element Is Visible   ${writeEmail-btn}   timeout=60   error=WriteMailButtonNotFound!
+   ${isSelectAllVisible}=   Run Keyword And Return Status   Element Should Be Visible   ${emailSelectAll}
+   Run Keyword If   ${isSelectAllVisible}>0   Deleting spam
+   ${isConfirmNeeded}=   Run Keyword And Return Status   Element Should Be Visible   ${emailConfirmDelete}
+   Run Keyword If   ${isConfirmNeeded}>0   Confirm deleting of spam
+
+Deleting spam
+   Wait Until Element Is Visible   ${emailSelectAll}   timeout=60   error=SelectAllButtonNotFound!
+   Click Element   ${emailSelectAll}
+   Wait Until Element Is Visible   ${emailDeleteAll}   timeout=60   error=DeleteAllButtonNotFound!
+   Click Button   ${emailDeleteAll}
+
+Confirm deleting of spam
+   Wait Until Element Is Visible   ${emailConfirmDelete}   timeout=60   error=ConfirmDeleteButtonNotFound!
+   Click Button   ${emailConfirmDelete}
 
 Logging out of poczta.o2.pl e-mail
    Wait Until Element Is Visible   ${options-btn}   timeout=60   error=OptionsButtonNotFound!
