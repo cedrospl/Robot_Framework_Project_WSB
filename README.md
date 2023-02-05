@@ -1,4 +1,4 @@
-Test automation scripts for RobotFramework Project for WSB
+Test automation scripts for RobotFramework Project for WSB (Postgraduate studies)
 
 DO NOT DELETE ANY OF THE FILE IN THIS DIRECTORY FOR YOU WILL NOT BE ABLE TO RUN TESTS
 
